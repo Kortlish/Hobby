@@ -1,0 +1,389 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #fff;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-def {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  height: 60vh;
+  padding: 2em;
+  background-image: url(../images/art-g788636fc8_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+@media (min-width: 50em) {
+  .header .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.header-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 88, 233, 0.7);
+  z-index: -1;
+}
+
+.header-left {
+  width: 100%;
+  height: 50%;
+  padding-top: 5em;
+  color: #fff;
+}
+
+@media (min-width: 50em) {
+  .header-left {
+    width: 49%;
+    height: 100%;
+  }
+}
+
+.header-left .title {
+  font-size: clamp(1rem, 10vw, 5rem);
+  text-transform: uppercase;
+}
+
+.header-left .subtitle {
+  font-size: clamp(0.5rem, 4vw, 2.2rem);
+}
+
+.header-right {
+  width: 100%;
+  height: 50%;
+}
+
+@media (min-width: 50em) {
+  .header-right {
+    width: 49%;
+    height: 100%;
+  }
+}
+
+.header-right lottie-player {
+  margin-top: 5em;
+  width: min(60%, 55em);
+}
+
+@media (min-width: 50em) {
+  .header-right lottie-player {
+    margin-top: 0;
+  }
+}
+
+.line {
+  margin: 2em auto;
+  width: 40px;
+  height: 5px;
+  background-color: #1170ec;
+}
+
+.main {
+  text-align: center;
+}
+
+.main .section-title {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: clamp(1rem, 4.5vw, 2.5rem);
+  text-transform: uppercase;
+}
+
+.main .section-title .animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1170ec;
+  -webkit-animation: show 2s 1s forwards;
+          animation: show 2s 1s forwards;
+}
+
+@-webkit-keyframes show {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.main .container {
+  max-width: 1400px;
+}
+
+.hobbies {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+  width: 100%;
+  margin: 5em 0;
+  min-height: 50em;
+}
+
+@media (min-width: 50em) {
+  .hobbies {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 80em) {
+  .hobbies {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hobby-card {
+  position: relative;
+  width: 100%;
+  min-height: 25em;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  color: white;
+}
+
+.card-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.card-title {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(233, 207, 60, 0.801);
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.card-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  -webkit-transition: -webkit-clip-path 0.3s ease-in-out;
+  transition: -webkit-clip-path 0.3s ease-in-out;
+  transition: clip-path 0.3s ease-in-out;
+  transition: clip-path 0.3s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+}
+
+.card-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.one:hover .text-one {
+  -webkit-clip-path: circle(110% at 50% 50%);
+          clip-path: circle(110% at 50% 50%);
+}
+
+.two:hover .text-two {
+  -webkit-clip-path: circle(110% at 50% 50%);
+          clip-path: circle(110% at 50% 50%);
+}
+
+.three:hover .text-three {
+  -webkit-clip-path: circle(110% at 50% 50%);
+          clip-path: circle(110% at 50% 50%);
+}
+
+.one {
+  background-image: url(../images/programming-mini.jpg);
+}
+
+@media (min-width: 70em) {
+  .one {
+    background-image: url(../images/programming-max.jpg);
+  }
+}
+
+.two {
+  background-image: url(../images/vg-mini.jpg);
+}
+
+@media (min-width: 70em) {
+  .two {
+    background-image: url(../images/vg-max.jpg);
+  }
+}
+
+.three {
+  background-image: url(../images/stunt-mini.jpg);
+}
+
+@media (min-width: 70em) {
+  .three {
+    background-image: url(../images/stunt-max.jpg);
+  }
+}
+
+@media (max-width: 80em) {
+  .three {
+    grid-column: 1 / -1;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 5em;
+}
+
+footer .stats li {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1em 2em;
+}
+
+footer .footer {
+  color: white;
+  background-color: #000;
+  font-size: clamp(0.7rem, 5vw, 2rem);
+  min-height: 40px;
+  padding: 0.8em 0;
+  line-height: 40px;
+}
+/*# sourceMappingURL=main.css.map */

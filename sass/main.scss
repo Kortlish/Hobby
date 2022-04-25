@@ -1,0 +1,295 @@
+@import 'general';
+
+// UTILITIES
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	// width: unquote($string: "min(100%, 1200px)");
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-def {
+	justify-content: center;
+	align-items: center;
+}
+
+.h100 {
+	height: 100%;
+}
+
+// ^ UTILITIES
+
+// MAIN
+
+.header {
+	position: relative;
+	height: 60vh;
+	padding: 2em;
+	background-image: url(../images/art-g788636fc8_1920.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	.container {
+		@media (min-width: 50em) {
+			flex-direction: row;
+		}
+	}
+}
+
+.header-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(10, 88, 233, 0.7);
+	z-index: -1;
+}
+
+.header-left {
+	width: 100%;
+	height: 50%;
+	padding-top: 5em;
+	color: #fff;
+
+	@media (min-width: 50em) {
+		width: 49%;
+		height: 100%;
+	}
+
+	.title {
+		font-size: unquote('clamp(1rem, 10vw, 5rem)');
+		text-transform: uppercase;
+	}
+
+	.subtitle {
+		font-size: unquote('clamp(0.5rem, 4vw, 2.2rem)');
+	}
+}
+
+.header-right {
+	width: 100%;
+	height: 50%;
+
+	@media (min-width: 50em) {
+		width: 49%;
+		height: 100%;
+	}
+
+	lottie-player {
+		margin-top: 5em;
+		width: unquote('min(60%, 55em)');
+
+		@media (min-width: 50em) {
+			margin-top: 0;
+		}
+	}
+}
+
+.line {
+	margin: 2em auto;
+	width: 40px;
+	height: 5px;
+	background-color: rgb(17, 112, 236);
+}
+
+.main {
+	text-align: center;
+	.section-title {
+		position: relative;
+		width: fit-content;
+		margin: 0 auto;
+		font-size: unquote('clamp(1rem, 4.5vw, 2.5rem)');
+		text-transform: uppercase;
+		.animate {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgb(17, 112, 236);
+			animation: show 2s 1s forwards;
+
+			@keyframes show {
+				0% {
+					width: 100%;
+					opacity: 1;
+				}
+
+				85% {
+					opacity: 1;
+				}
+				100% {
+					width: 0;
+					opacity: 0;
+				}
+			}
+		}
+	}
+	.container {
+		max-width: 1400px;
+	}
+}
+
+.hobbies {
+	display: grid;
+	gap: 2em;
+	width: 100%;
+	margin: 5em 0;
+	min-height: 50em;
+
+	@media (min-width: 50em) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 80em) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.hobby-card {
+	position: relative;
+	width: 100%;
+	min-height: 25em;
+	background-size: cover;
+	background-position: center;
+	// @media (min-width: 50rem) {
+	// 	width: calc(50% - 5em);
+	// }
+
+	// @media (min-width: 80rem) {
+	// 	width: calc(33% - 5em);
+	// 	background-image: url(../images/programming-max.jpg);
+	// }
+	z-index: 0;
+	color: white;
+}
+
+.card-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: -1;
+}
+
+.card-title {
+	position: absolute;
+	top: 5%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	color: rgba(233, 207, 60, 0.801);
+	letter-spacing: 2px;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+.card-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 3em;
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	background-color: rgba(0, 0, 0, 0.4);
+	clip-path: circle(0% at 50% 50%);
+	transition: clip-path 0.3s ease-in-out;
+}
+
+.card-subtitle {
+	font-size: unquote('clamp(1.2rem, 3vw, 1.5rem)');
+}
+
+.one:hover .text-one {
+	clip-path: circle(110% at 50% 50%);
+}
+
+.two:hover .text-two {
+	clip-path: circle(110% at 50% 50%);
+}
+
+.three:hover .text-three {
+	clip-path: circle(110% at 50% 50%);
+}
+
+.one {
+	background-image: url(../images/programming-mini.jpg);
+
+	@media (min-width: 70em) {
+		background-image: url(../images/programming-max.jpg);
+	}
+}
+
+.two {
+	background-image: url(../images/vg-mini.jpg);
+
+	@media (min-width: 70em) {
+		background-image: url(../images/vg-max.jpg);
+	}
+}
+
+.three {
+	background-image: url(../images/stunt-mini.jpg);
+
+	@media (min-width: 70em) {
+		background-image: url(../images/stunt-max.jpg);
+	}
+
+	@media (max-width: 80em) {
+		grid-column: 1 / -1;
+	}
+}
+
+footer {
+	text-align: center;
+	margin-top: 5em;
+	// .info {
+	// 	font-size: unquote('clamp(1rem, 5vw, 3rem)');
+	// 	min-height: 6em;
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	padding: 2em 5em;
+	// 	color: rgb(236, 236, 236);
+	// 	background-color: rgba(0, 0, 0, 0.7);
+	// }
+
+	.stats {
+		li {
+			display: inline-block;
+			font-size: 1.5rem;
+			padding: 1em 2em;
+		}
+	}
+
+	.footer {
+		color: white;
+		background-color: #000;
+		font-size: unquote('clamp(0.7rem, 5vw, 2rem)');
+		min-height: 40px;
+		padding: 0.8em 0;
+		line-height: 40px;
+	}
+}

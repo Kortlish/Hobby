@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moje Hobby | Piotr Janas</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./css/main.css" />
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-shadow"></div>
+			<div class="container flex-col flex-def h100">
+				<div class="header-left flex-col flex-def">
+					<div class="heading">
+						<h1 class="title">moje hobby</h1>
+						<p class="subtitle">
+							Strona poświęcona jest moim zainteresowaniom, do których zalicza
+							się m.in. Programowanie, w wolnym czasie gry video i sporadycznie
+							wyczynowa jazda rowerem. Najedź na jedną z kart na dole aby
+							dowiedzieć się więcej.
+						</p>
+					</div>
+				</div>
+				<div class="header-right flex-col flex-def">
+					<lottie-player
+						src="https://assets7.lottiefiles.com/packages/lf20_qm8eqzse.json"
+						background="transparent"
+						speed="1"
+						loop
+						autoplay
+					></lottie-player>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="container flex-col">
+				<span class="line"></span>
+				<h2 class="section-title">
+					Do moich hobby należy
+					<span class="animate"></span>
+				</h2>
+
+				<div class="hobbies">
+					<div class="hobby-card one">
+						<h3 class="card-title">programowanie</h3>
+						<div class="card-shadow"></div>
+
+						<div class="card-text text-one">
+							<p class="card-subtitle">
+								Uczę się programowanie od ósmej klasy podstawówki, zacząłem od
+								c++ którego swego czasu bardzo polubiłem. W późniejszym okresie
+								zająłem się pisaniem kodu w html'u i css'ie i choć formalnie nie
+								są to języki programowania, postanowiłem wspomnieć o nich w
+								tej sekcji. w 2021 spróbowałem swoich sił w pythonie, który
+								okazał się bardzo prosty. Zrobiłem w nim w pełni działający
+								kalkulator w formie aplikacji, przy użyciu biblioteki tkinter.
+							</p>
+						</div>
+					</div>
+					<div class="hobby-card two">
+						<h3 class="card-title">gry video</h3>
+						<div class="card-shadow"></div>
+
+						<div class="card-text text-two">
+							<p class="card-subtitle">
+								W gry video gram odkąd skończyłem 5 lat, musze przyznać że przez
+								długi okres mojego życia były one głownym sposobem na nude, od
+								paru lat gram o wiele wiele mniej przez co przerzuciłem się na
+								inne formy spędzania czasu.
+							</p>
+						</div>
+					</div>
+					<div class="hobby-card three">
+						<h3 class="card-title">stunt / freeride</h3>
+						<div class="card-shadow"></div>
+
+						<div class="card-text text-three">
+							<p class="card-subtitle">
+								Od niedawna więcej czasu spędzam poza domem, z racji że nie mam
+								jeszcze prawa jazdy często przemieszczam się rowerem. Lubie
+								uczyć się trików, takich jak np. Wheelie (jazda na tylnim kole)
+								lub Bunny hop czy też weep. Póki co nie umiem ich najlepiej ale wszystko przede mną
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<ul class="stats">
+				<li>Czas pracy: ~2h</li>
+				<li>Autor: Piotr Janas</li>
+				<li>Zewnętrze biblioteki: Nie</li>
+				<li>Wykorzystany nowoczesny CSS: Tak</li>
+			</ul>
+			<div class="footer">
+				<p>&copy; 2022 Wszelkie prawa zastrzeżone</p>
+			</div>
+		</footer>
+	</body>
+</html>
