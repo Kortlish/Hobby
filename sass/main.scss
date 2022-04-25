@@ -1,5 +1,13 @@
 @import 'general';
 
+// COLORS
+
+$main: rgb(17, 112, 236);
+
+.colorit {
+	color: $main;
+}
+
 // UTILITIES
 
 .container {
@@ -74,6 +82,7 @@
 	.title {
 		font-size: unquote('clamp(1rem, 10vw, 5rem)');
 		text-transform: uppercase;
+		text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 	}
 
 	.subtitle {
@@ -101,45 +110,50 @@
 }
 
 .line {
+	display: block;
 	margin: 2em auto;
 	width: 40px;
 	height: 5px;
-	background-color: rgb(17, 112, 236);
+	position: relative;
+	background-color: $main;
+	// text-align: center;
+}
+
+.section-title {
+	position: relative;
+	width: fit-content;
+	margin: 0 auto;
+	color: #222;
+	font-size: unquote('clamp(1rem, 4.5vw, 2.5rem)');
+	text-transform: uppercase;
+	.animate {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $main;
+		animation: show 2s 1s forwards;
+
+		@keyframes show {
+			0% {
+				width: 100%;
+				opacity: 1;
+			}
+
+			85% {
+				opacity: 1;
+			}
+			100% {
+				width: 0;
+				opacity: 0;
+			}
+		}
+	}
 }
 
 .main {
 	text-align: center;
-	.section-title {
-		position: relative;
-		width: fit-content;
-		margin: 0 auto;
-		font-size: unquote('clamp(1rem, 4.5vw, 2.5rem)');
-		text-transform: uppercase;
-		.animate {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			background-color: rgb(17, 112, 236);
-			animation: show 2s 1s forwards;
-
-			@keyframes show {
-				0% {
-					width: 100%;
-					opacity: 1;
-				}
-
-				85% {
-					opacity: 1;
-				}
-				100% {
-					width: 0;
-					opacity: 0;
-				}
-			}
-		}
-	}
 	.container {
 		max-width: 1400px;
 	}
@@ -150,7 +164,9 @@
 	gap: 2em;
 	width: 100%;
 	margin: 5em 0;
+	padding: 2em;
 	min-height: 50em;
+	font-family: 'Roboto', sans-serif;
 
 	@media (min-width: 50em) {
 		grid-template-columns: 1fr 1fr;
@@ -276,20 +292,42 @@ footer {
 	// 	background-color: rgba(0, 0, 0, 0.7);
 	// }
 
+	.section-title {
+		margin-bottom: 2em;
+	}
+
 	.stats {
 		li {
 			display: inline-block;
 			font-size: 1.5rem;
 			padding: 1em 2em;
+			margin-bottom: 2em;
 		}
+	}
+
+	.stat-item {
+		background-image: linear-gradient(
+			to bottom,
+			rgb(238, 238, 238),
+			rgb(226, 226, 226)
+		);
+		box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+		margin: 0.5em 2rem;
+		border-radius: 1em;
+		min-width: 12em;
+	}
+
+	.icon {
+		font-size: 3rem;
+		padding: 0.5em;
 	}
 
 	.footer {
 		color: white;
 		background-color: #000;
 		font-size: unquote('clamp(0.7rem, 5vw, 2rem)');
-		min-height: 40px;
+		min-height: 25px;
 		padding: 0.8em 0;
-		line-height: 40px;
+		line-height: 25px;
 	}
 }
